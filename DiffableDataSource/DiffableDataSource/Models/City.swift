@@ -8,6 +8,27 @@
 
 import Foundation
 import CoreLocation
+import Alamofire
+
+public struct City: Decodable, Hashable {
+    
+    let id: Int
+    let name: String
+    let coordinates: Coordinates
+    let wind: Wind
+    let main: WeatherDetails
+    let weather: Set<Weather>
+
+
+    enum CodingKeys: String, CodingKey {
+        case id
+        case name
+        case main
+        case coordinates = "coord"
+        case wind
+        case weather
+    }
+}
 
 public struct Weather: Decodable, Hashable {
     let id: Int
@@ -53,23 +74,24 @@ public struct Coordinates: Decodable, Hashable {
     }
 }
 
-public struct City: Decodable, Hashable {
+
+
+extension RestClient {
     
-    let id: Double
-    let name: String
-    let coordinates: Coordinates
-    let wind: Wind
-    let main: WeatherDetails
-    let description: Set<Weather>
-
-
-    enum CodingKeys: String, CodingKey {
-        case id
-        case name
-        case main
-        case coordinates = "coord"
-        case wind
-        case description = "weather"
-        
+    func requestCityForecasts(_ city: City, completion: @escaping ResponseClosure<DailyForcast>) {
+        AF.request(url(path: "/data/2.5/forecast",
+                       query: [URLQueryItem(name: "id", value: "\(city.id)"),
+                               URLQueryItem(name: "appid", value: Constants.openWeatherAPIKey)]),
+                   method: .get,
+                   parameters: nil,
+                   encoding: URLEncoding.default, headers: nil)
+            .validate().responseDecodable(of: DailyForcast.self) { (response) in
+                guard let dailyForcast = response.value else {
+                    completion(nil, response.error)
+                    return
+                }
+                completion(dailyForcast,  nil)
+        }
     }
+    
 }

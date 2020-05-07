@@ -12,11 +12,11 @@ import CoreLocation
 
 public struct Cities: Decodable, Hashable {
     let count: Int
-    let cities: [City]
+    let list: [City]
     
     enum CodingKeys: String, CodingKey {
       case count
-      case cities = "list"
+      case list
     }
 }
 
@@ -26,9 +26,9 @@ extension RestClient {
         
         AF.request(url(path: "/data/2.5/find",
                        query: [URLQueryItem(name: "lat", value: "\(location.latitude)"),
-                                             URLQueryItem(name: "lon", value: "\(location.longitude)"),
-                                             URLQueryItem(name: "cnt", value: "\(limit)"),
-                                             URLQueryItem(name: "appid", value: Constants.openWeatherAPIKey)]),
+                               URLQueryItem(name: "lon", value: "\(location.longitude)"),
+                               URLQueryItem(name: "cnt", value: "\(limit)"),
+                               URLQueryItem(name: "appid", value: Constants.openWeatherAPIKey)]),
                    method: .get,
                    parameters: nil,
                    encoding: URLEncoding.default, headers: nil)

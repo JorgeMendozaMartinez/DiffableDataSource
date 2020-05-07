@@ -17,6 +17,12 @@
 		3FD8956F246331F900EFC90C /* RestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD8956D246331F900EFC90C /* RestClient.swift */; };
 		3FD895712463322700EFC90C /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD895702463322700EFC90C /* LocationManager.swift */; };
 		3FD89573246349AB00EFC90C /* Cities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD89572246349AB00EFC90C /* Cities.swift */; };
+		3FD8957A2463876E00EFC90C /* UIControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD895792463876E00EFC90C /* UIControl.swift */; };
+		3FD8957C24638A9E00EFC90C /* UIContextualAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD8957B24638A9E00EFC90C /* UIContextualAction.swift */; };
+		3FD8957E24638F5100EFC90C /* CityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD8957D24638F5100EFC90C /* CityViewController.swift */; };
+		3FD895802463945C00EFC90C /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD8957F2463945C00EFC90C /* Forecast.swift */; };
+		3FD89583246397E700EFC90C /* ForecastCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD89582246397E700EFC90C /* ForecastCollectionViewCell.swift */; };
+		3FD895852463981700EFC90C /* ForecastCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FD895842463981700EFC90C /* ForecastCollectionViewCell.xib */; };
 		968EC980C229E99E368284C8 /* Pods_DiffableDataSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57626279994C623414E80B6A /* Pods_DiffableDataSource.framework */; };
 		F59712A0BF9AE30E19411555 /* Pods_DiffableDataSourceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CAE468D969FFC97143DD48A /* Pods_DiffableDataSourceTests.framework */; };
 /* End PBXBuildFile section */
@@ -48,6 +54,12 @@
 		3FD8956D246331F900EFC90C /* RestClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestClient.swift; sourceTree = "<group>"; };
 		3FD895702463322700EFC90C /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		3FD89572246349AB00EFC90C /* Cities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cities.swift; sourceTree = "<group>"; };
+		3FD895792463876E00EFC90C /* UIControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIControl.swift; sourceTree = "<group>"; };
+		3FD8957B24638A9E00EFC90C /* UIContextualAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIContextualAction.swift; sourceTree = "<group>"; };
+		3FD8957D24638F5100EFC90C /* CityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewController.swift; sourceTree = "<group>"; };
+		3FD8957F2463945C00EFC90C /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
+		3FD89582246397E700EFC90C /* ForecastCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastCollectionViewCell.swift; sourceTree = "<group>"; };
+		3FD895842463981700EFC90C /* ForecastCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForecastCollectionViewCell.xib; sourceTree = "<group>"; };
 		475EF43FC4DA277589FB548E /* Pods-DiffableDataSource.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiffableDataSource.release.xcconfig"; path = "Target Support Files/Pods-DiffableDataSource/Pods-DiffableDataSource.release.xcconfig"; sourceTree = "<group>"; };
 		57626279994C623414E80B6A /* Pods_DiffableDataSource.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DiffableDataSource.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AE3FE3D46D3AA36F2C8C82B /* Pods-DiffableDataSourceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiffableDataSourceTests.release.xcconfig"; path = "Target Support Files/Pods-DiffableDataSourceTests/Pods-DiffableDataSourceTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -97,6 +109,7 @@
 		3FD8954224632B0A00EFC90C /* DiffableDataSource */ = {
 			isa = PBXGroup;
 			children = (
+				3FD895782463874B00EFC90C /* Extensions */,
 				3FD8956924632D6C00EFC90C /* Models */,
 				3FD8956824632D4800EFC90C /* API */,
 				3FD8956524632C5100EFC90C /* ViewControllers */,
@@ -120,7 +133,9 @@
 		3FD8956524632C5100EFC90C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				3FD89581246397C800EFC90C /* CollectionCell */,
 				3FD8956624632CC900EFC90C /* CitiesTableViewController.swift */,
+				3FD8957D24638F5100EFC90C /* CityViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -140,8 +155,27 @@
 			children = (
 				3FD8956A246331E800EFC90C /* City.swift */,
 				3FD89572246349AB00EFC90C /* Cities.swift */,
+				3FD8957F2463945C00EFC90C /* Forecast.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		3FD895782463874B00EFC90C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3FD895792463876E00EFC90C /* UIControl.swift */,
+				3FD8957B24638A9E00EFC90C /* UIContextualAction.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3FD89581246397C800EFC90C /* CollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				3FD89582246397E700EFC90C /* ForecastCollectionViewCell.swift */,
+				3FD895842463981700EFC90C /* ForecastCollectionViewCell.xib */,
+			);
+			path = CollectionCell;
 			sourceTree = "<group>";
 		};
 		7725741B55CB9313559FDE9D /* Pods */ = {
@@ -249,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FD8955024632B0A00EFC90C /* LaunchScreen.storyboard in Resources */,
+				3FD895852463981700EFC90C /* ForecastCollectionViewCell.xib in Resources */,
 				3FD8954D24632B0A00EFC90C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -331,12 +366,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FD8957C24638A9E00EFC90C /* UIContextualAction.swift in Sources */,
+				3FD8957E24638F5100EFC90C /* CityViewController.swift in Sources */,
 				3FD8956724632CC900EFC90C /* CitiesTableViewController.swift in Sources */,
+				3FD8957A2463876E00EFC90C /* UIControl.swift in Sources */,
 				3FD8954424632B0A00EFC90C /* AppDelegate.swift in Sources */,
 				3FD895712463322700EFC90C /* LocationManager.swift in Sources */,
 				3FD8956B246331E800EFC90C /* City.swift in Sources */,
+				3FD89583246397E700EFC90C /* ForecastCollectionViewCell.swift in Sources */,
 				3FD89573246349AB00EFC90C /* Cities.swift in Sources */,
 				3FD8956F246331F900EFC90C /* RestClient.swift in Sources */,
+				3FD895802463945C00EFC90C /* Forecast.swift in Sources */,
 				3FD8956E246331F900EFC90C /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
