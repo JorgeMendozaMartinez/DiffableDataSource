@@ -7,6 +7,7 @@ target 'DiffableDataSource' do
 
   # Pods for DiffableDataSource
   pod 'Alamofire'
+  pod 'SDWebImage'
 
   target 'DiffableDataSourceTests' do
     inherit! :search_paths

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ForecastCollectionViewCell: UICollectionViewCell {
     static let nibName = "ForecastCollectionViewCell"
@@ -15,6 +16,7 @@ class ForecastCollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var dateLabel: UILabel!
     @IBOutlet private weak var windSpeedLabel: UILabel!
     @IBOutlet private weak var tempetureLabel: UILabel!
+    @IBOutlet private weak var imageView: UIImageView!
     
     var forecast: Forecast? {
         didSet {
@@ -23,6 +25,10 @@ class ForecastCollectionViewCell: UICollectionViewCell {
                 windSpeedLabel.text = "\(forecast.wind.speed) mph"
                 tempetureLabel.text = forecast.kelvinToCelsiusDegreeString(forecast.main.temp)
                 dateLabel.text = forecast.date
+                if let weather = forecast.weather.first {
+                    imageView.sd_setImage(with: RestClient.default.url(path: "img/w/\(weather.icon).png"),
+                                          placeholderImage: UIImage(systemName: "cloud.heavyrain.fill"))
+                }
             }
         }
     }

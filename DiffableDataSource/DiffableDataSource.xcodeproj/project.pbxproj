@@ -23,6 +23,7 @@
 		3FD895802463945C00EFC90C /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD8957F2463945C00EFC90C /* Forecast.swift */; };
 		3FD89583246397E700EFC90C /* ForecastCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD89582246397E700EFC90C /* ForecastCollectionViewCell.swift */; };
 		3FD895852463981700EFC90C /* ForecastCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FD895842463981700EFC90C /* ForecastCollectionViewCell.xib */; };
+		3FD895B32469A77100EFC90C /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD895B22469A77100EFC90C /* Weather.swift */; };
 		968EC980C229E99E368284C8 /* Pods_DiffableDataSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57626279994C623414E80B6A /* Pods_DiffableDataSource.framework */; };
 		F59712A0BF9AE30E19411555 /* Pods_DiffableDataSourceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CAE468D969FFC97143DD48A /* Pods_DiffableDataSourceTests.framework */; };
 /* End PBXBuildFile section */
@@ -60,6 +61,7 @@
 		3FD8957F2463945C00EFC90C /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 		3FD89582246397E700EFC90C /* ForecastCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastCollectionViewCell.swift; sourceTree = "<group>"; };
 		3FD895842463981700EFC90C /* ForecastCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForecastCollectionViewCell.xib; sourceTree = "<group>"; };
+		3FD895B22469A77100EFC90C /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		475EF43FC4DA277589FB548E /* Pods-DiffableDataSource.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiffableDataSource.release.xcconfig"; path = "Target Support Files/Pods-DiffableDataSource/Pods-DiffableDataSource.release.xcconfig"; sourceTree = "<group>"; };
 		57626279994C623414E80B6A /* Pods_DiffableDataSource.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DiffableDataSource.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AE3FE3D46D3AA36F2C8C82B /* Pods-DiffableDataSourceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiffableDataSourceTests.release.xcconfig"; path = "Target Support Files/Pods-DiffableDataSourceTests/Pods-DiffableDataSourceTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				3FD8956A246331E800EFC90C /* City.swift */,
 				3FD89572246349AB00EFC90C /* Cities.swift */,
 				3FD8957F2463945C00EFC90C /* Forecast.swift */,
+				3FD895B22469A77100EFC90C /* Weather.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 				3FD895712463322700EFC90C /* LocationManager.swift in Sources */,
 				3FD8956B246331E800EFC90C /* City.swift in Sources */,
 				3FD89583246397E700EFC90C /* ForecastCollectionViewCell.swift in Sources */,
+				3FD895B32469A77100EFC90C /* Weather.swift in Sources */,
 				3FD89573246349AB00EFC90C /* Cities.swift in Sources */,
 				3FD8956F246331F900EFC90C /* RestClient.swift in Sources */,
 				3FD895802463945C00EFC90C /* Forecast.swift in Sources */,

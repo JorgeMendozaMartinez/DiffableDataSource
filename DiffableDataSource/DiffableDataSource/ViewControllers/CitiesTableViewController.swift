@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import SDWebImage
 
 class CitiesTableViewController: UITableViewController {
     
@@ -47,7 +48,12 @@ class CitiesTableViewController: UITableViewController {
         
         cell.accessoryType = .disclosureIndicator
         cell.textLabel?.text = city.name
-        cell.detailTextLabel?.text = city.weather.first?.description ?? ""
+        if let weather = city.weather.first {
+            cell.detailTextLabel?.text = weather.description
+            cell.imageView?.sd_setImage(with: RestClient.default.url(path: "img/w/\(weather.icon).png"),
+                                        placeholderImage: UIImage(systemName: "cloud.heavyrain.fill"))
+        }
+       
         return cell
     }
     
